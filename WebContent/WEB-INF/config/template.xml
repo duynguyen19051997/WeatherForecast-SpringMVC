@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+ 	<!-- ADMIN TEMPLATE -->
+	<definition name="cland.admin.template" template="/WEB-INF/templates/admin/template.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+	    <put-attribute name="left-bar" value="/WEB-INF/templates/admin/left-bar.jsp" />
+	    <put-attribute name="main" value="" />
+	    <put-attribute name="footer" value="/WEB-INF/templates/admin/footer.jsp" />
+	</definition>
+	
+  	<definition name="cland.admin.index.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/index/index.jsp" />
+	</definition>
+	
+	<!--START-ADMIN-CAT -->
+	<definition name="cland.admin.cat.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/index.jsp" />
+	</definition>
+	<definition name="cland.admin.cat.search" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/search.jsp" />
+	</definition>
+	<definition name="cland.admin.cat.add" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/add.jsp" />
+	</definition>
+	<definition name="cland.admin.cat.edit" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/cat/edit.jsp" />
+	</definition>
+	<!--END-ADMIN-CAT -->
+	
+	<!--START-ADMIN-SLIDE -->
+	<definition name="cland.admin.slide.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/index.jsp" />
+	</definition>
+	<definition name="cland.admin.slide.add" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/add.jsp" />
+	</definition>
+	<definition name="cland.admin.slide.edit" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/slide/edit.jsp" />
+	</definition>
+	<!--END-ADMIN-SLIDE -->
+	
+	<!--START-ADMIN-CONTACT -->
+	<definition name="cland.admin.contact.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/contact/index.jsp" />
+	</definition>
+	<definition name="cland.admin.contact.edit" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/contact/edit.jsp" />
+	</definition>
+	<definition name="cland.admin.contact.search" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/contact/search.jsp" />
+	</definition>
+	
+	<!--END-ADMIN-CONTACT -->
+	
+	<!-- START-ADMIN-LAND -->
+	<definition name="cland.admin.land.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/land/index.jsp" />
+	</definition>
+	<definition name="cland.admin.land.add" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/land/add.jsp" />
+	</definition>
+	<definition name="cland.admin.land.edit" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/land/edit.jsp" />
+	</definition>
+	<definition name="cland.admin.land.search" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/land/search.jsp" />
+	</definition>
+	<!-- END -ADMIN-LAND -->
+	
+	<!-- START-ADMIN-USER-->
+	<definition name="cland.admin.user.index" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/index.jsp" />
+	</definition>
+	<definition name="cland.admin.user.add" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/add.jsp" />
+	</definition>
+	<definition name="cland.admin.user.edit" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/edit.jsp" />
+	</definition>
+	<definition name="cland.admin.user.profile" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/profile.jsp" />
+	</definition>
+	<definition name="cland.admin.user.search" extends="cland.admin.template">
+    	<put-attribute name="main" value="/WEB-INF/views/admin/user/search.jsp" />
+	</definition>
+	<!-- END -ADMIN-USER -->
+	
+  <!--  END ADMIN TEMPLATE -->
+   
+   <!-- PUBLIC TEMPLATE -->
+	<definition name="cland.public.template" template="/WEB-INF/templates/public/template.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/public/header.jsp" />
+	    <put-attribute name="right-bar" value="/WEB-INF/templates/public/right-bar.jsp" />
+	    <put-attribute name="main" value="" />
+	    <put-attribute name="footer" value="/WEB-INF/templates/public/footer.jsp" />
+	</definition>
+	
+  	<definition name="cland.public.index.index" extends="cland.public.template">
+    	<put-attribute name="main" value="/WEB-INF/views/public/index.jsp" />
+	</definition>
+	
+	<definition name="cland.public.index.cat" extends="cland.public.template">
+    	<put-attribute name="main" value="/WEB-INF/views/public/cat.jsp" />
+	</definition>
+	
+	<definition name="cland.public.index.single" extends="cland.public.template">
+    	<put-attribute name="main" value="/WEB-INF/views/public/single.jsp" />
+	</definition>
+	
+	<definition name="cland.public.index.contact" extends="cland.public.template">
+    	<put-attribute name="main" value="/WEB-INF/views/public/contact.jsp" />
+	</definition>
+	
+	<definition name="cland.public.index.search" extends="cland.public.template">
+    	<put-attribute name="main" value="/WEB-INF/views/public/search.jsp" />
+	</definition>
+  <!--END PUBLIC TEMPLATE -->
+  
+  <!-- Login TEMPLATE -->
+	<definition name="cland.login.template" template="/WEB-INF/templates/admin/template.jsp">
+	    <put-attribute name="header" value="/WEB-INF/templates/admin/header.jsp" />
+	    <put-attribute name="main" value="" />
+	</definition>
+	
+</tiles-definitions>
