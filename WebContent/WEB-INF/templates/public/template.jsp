@@ -1,53 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/templates/taglib.jsp" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/templates/taglib.jsp" %>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Weather Forecast</title>
+		<link rel="SHORTCUT ICON" href="${pageContext.request.contextPath}/publicUrl/images/logo.png">
+		<!-- Loading third party fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/publicUrl/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<head>
-    <title>CLand | VinaEnter Edu</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Oswald Font -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/publicUrl/css/tooltipster.css" />
-    <!-- home slider-->
-    <link href="${pageContext.request.contextPath}/publicUrl/css/pgwslider.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/publicUrl/css/slide.css" />
-    <link href="${pageContext.request.contextPath}/publicUrl/css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/publicUrl/css/font-awesome.min.css">
-    <link href="${pageContext.request.contextPath}/publicUrl/style.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/publicUrl/responsive.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/publicUrl/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/publicUrl/css/bootstrap-reboot.min.css" rel="stylesheet" media="screen">
-    <link href="${pageContext.request.contextPath}/publicUrl/css/bootstrap-grid.min.css" rel="stylesheet" media="screen">
-    
-    <!-- Font Awesome -->
-    <script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/jquery.tooltipster.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/selectnav.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/pgwslider.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/publicUrl/js/placeholder_support_IE.js"></script>
-	
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/publicUrl/css/style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/publicUrl/css/custom.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/publicUrl/css/bootstrap.min.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+		<script src="${pageContext.request.contextPath}/publicUrl/js/jquery-1.11.1.min.js"></script>
+		<script src="${pageContext.request.contextPath}/publicUrl/js/jquery.validate.min.js"></script>
+		<script src="${pageContext.request.contextPath}/publicUrl/js/jquery.custom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="${pageContext.request.contextPath}/publicUrl/js/bootstrap.min.js"></script>
+		
+	</head>
 
-</head>
 
-<body>
-	<tiles:insertAttribute name="header"></tiles:insertAttribute>
-    <section id="content_area">
-        <div class="clearfix wrapper main_content_area">
-
-            <div class="clearfix main_content floatleft">
-				<tiles:insertAttribute name="main"></tiles:insertAttribute>
-            </div>
-            <div class="clearfix sidebar_container floatright">
-            	<tiles:insertAttribute name="right-bar"></tiles:insertAttribute>
-            </div>
-        </div>
-    </section>
-   <tiles:insertAttribute name="footer"></tiles:insertAttribute>
-</body>
+	<body>
+		
+		<div class="site-content">
+			<div class="site-header">
+				<tiles:insertAttribute name="header"></tiles:insertAttribute>
+			</div> <!-- .site-header -->
+			<tiles:insertAttribute name="main"></tiles:insertAttribute>
+			<footer class="site-footer">
+				<tiles:insertAttribute name="footer"></tiles:insertAttribute>
+			</footer> <!-- .site-footer -->
+		</div>
+		
+		<script src="${pageContext.request.contextPath}/publicUrl/js/plugins.js"></script>
+		<script src="${pageContext.request.contextPath}/publicUrl/js/app.js"></script>
+		
+	</body>
 
 </html>

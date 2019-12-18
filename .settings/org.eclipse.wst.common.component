@@ -2,7 +2,7 @@
     <wb-module deploy-name="cland">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="cland"/>
         <property name="java-output-path" value="/cland/build/classes"/>
+        <property name="context-root" value="weatherforecast"/>
     </wb-module>
 </project-modules>

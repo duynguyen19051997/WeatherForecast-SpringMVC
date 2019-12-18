@@ -1,107 +1,157 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/templates/taglib.jsp" %>
-<!-- header -->
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Login VNE</title>
-    <link rel="shortcut icon" type="image/ico" href="${pageContext.request.contextPath}/adminUrl/images/icon-180x180.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="${pageContext.request.contextPath}/adminUrl/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- styles -->
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/adminUrl/css/style1.css"
-	rel="stylesheet">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}/adminUrl/assets/images/logobs.png">
+    <title>BookStore Admin</title>
+    <!-- Custom CSS -->
+	<link href="${pageContext.request.contextPath}/adminUrl/dist/css/style.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/adminUrl/dist/css/mystyle.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <!-- Logo -->
-                    <div class="logo">
-                        <h1><a href="index.php">VNE-Admin</a></h1>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="row">
-                        <div class="col-lg-12"></div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="navbar navbar-inverse" role="banner">
-                        <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-                                    <ul class="dropdown-menu animated fadeInUp">
-                                        <li><a href="profile.php">Profile</a></li>
-                                        <li><a href="login.php">Logout</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+    <div class="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
             </div>
         </div>
-    </div>
-    <!-- /.header -->
-
-    <div class="page-content container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="login-wrapper">
-                    <div class="box">
-                        <div class="content-wrap">
-                            <img width="100px" height="100px" class="img-circle" src="${pageContext.request.contextPath}/adminUrl/images/icon-180x180.png">
-                            <h6>Đăng nhập</h6>
-                            <c:if test="${param['error'] eq 'loginErr'}">
-                            	<h6>Sai username hoặc password</h6>
-                            </c:if>
-							<form action="${pageContext.request.contextPath}/auth/login" method="post">
-	                            <div class="form-group">
-	                                <label class="text-left pull-left" for="username">Tên đăng nhập</label>
-	                                <input class="form-control" type="text" name="username" placeholder="Username">
-	                            </div>
-	
-	                            <div class="form-group">
-	                                <label class="text-left pull-left" for="password">Mật khẩu</label>
-	                                <input class="form-control" type="password" name="password" placeholder="Password">
-	                            </div>
-	
-	                            <div class="action">
-	                                <input class="btn btn-primary signup btn-block" type="submit" name="submit" value="Login">
-	                            </div>
-                            </form>
+        <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+        <div id="login" class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
+            <div id="login" class="auth-box bg-dark">
+                <div id="loginform">
+                    <div class="text-center p-t-20 p-b-20">
+                        <span class="db"><img id="imgage" src="${pageContext.request.contextPath}/adminUrl/assets/images/logobookstore.png" alt="logo" /></span>
+                    </div>
+                    <div class="text-center p-t-20 p-b-20">
+			     		<c:if test="${'loginErr' eq param['error']}">
+			       	 		<h3 class="text-danger">Sai username hoặc mật khẩu</h3>
+			    		</c:if>
+		    		</div>
+                    <!-- Form -->
+                    <form class="form-horizontal m-t-20" id="loginform" action="" method="POST">
+                        <div class="row p-b-30">
+                            <div class="col-12">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
+                                    </div>
+                                    <input type="text" name="username" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required="">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+                                    </div>
+                                    <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required="">
+                                </div>
+                            </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="p-t-20">
+                                        <button class="btn btn-danger float-left" type="submit">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="recoverform">
+                    <div class="text-center">
+                        <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
                     </div>
-
-                    <div class="already">
-                        <p>Don't have an account yet?</p>
-                        <a href="javascript:void(0)">Sign Up</a>
+                    <div class="row m-t-20">
+                        <!-- Form -->
+                        <form class="col-12" action="index.html">
+                            <!-- email -->
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
+                                </div>
+                                <input type="text" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <!-- pwd -->
+                            <div class="row m-t-20 p-t-20 border-top border-secondary">
+                                <div class="col-12">
+                                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
+                                    <button class="btn btn-info float-right" type="button" name="action">Recover</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- ============================================================== -->
+        <!-- Login box.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper scss in scafholding.scss -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right Sidebar -->
+        <!-- ============================================================== -->
     </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <script src="${pageContext.request.contextPath}/adminUrl/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="${pageContext.request.contextPath}/adminUrl/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="${pageContext.request.contextPath}/adminUrl/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <script>
 
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".preloader").fadeOut();
+    // ============================================================== 
+    // Login and Recover Password 
+    // ============================================================== 
+    $('#to-recover').on("click", function() {
+        $("#loginform").slideUp();
+        $("#recoverform").fadeIn();
+    });
+    $('#to-login').click(function(){
+        
+        $("#recoverform").hide();
+        $("#loginform").fadeIn();
+    });
+    </script>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
 </body>
 
 </html>

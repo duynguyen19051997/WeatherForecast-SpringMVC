@@ -14,7 +14,7 @@
 	<!-- START.config tile3 -->
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
-		 <property name="order" value="1"></property> <!-- order cang cao thi do uu tien cang cao, thymeleaf spring => chay truoc -->
+		 <property name="order" value="1"></property>
 	</bean>
 	
 	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

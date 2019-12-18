@@ -14,11 +14,11 @@
    
 	<mvc:annotation-driven />
 	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resources/weatherforecast/public/" mapping="/publicUrl/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resources/weatherforecast/admin/" mapping="/adminUrl/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/" mapping="/pathUrl/**"></mvc:resources>
-	<mvc:resources location="/WEB-INF/resources/cland/public/" mapping="/publicUrl/**"></mvc:resources>
-	<mvc:resources location="/WEB-INF/resources/cland/admin/" mapping="/adminUrl/**"></mvc:resources>
-	<!-- Scan package controller -->
-    <context:component-scan base-package="vn.edu.vinaenter.*"/>
+    
+    <context:component-scan base-package="duynguyen.*"></context:component-scan>
     
     <mvc:interceptors>
 	    <mvc:interceptor>
@@ -26,7 +26,7 @@
 		      <mvc:mapping path="/cat" />
 		      <mvc:mapping path="/single" />
 		      <mvc:mapping path="/contact" />
-	        <bean id="listCategoryInterceptor" class="vn.edu.vinaenter.interceptor.ListCategoryInterceptor"/>
+	        <bean id="listCategoryInterceptor" class="duynguyen.interceptor.ListCategoryInterceptor"/>
 	    </mvc:interceptor>
 	</mvc:interceptors>
 </beans>
